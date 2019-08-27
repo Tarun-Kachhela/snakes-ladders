@@ -14,14 +14,6 @@ html,body{
 	height: 100px;
 }
 /**********************************for styling all rows & inside all the rows all the tags are styled**********************/
-.row1,.row2,.row3{
-	background: #1B252D;
-	height: 135px;
-	border-bottom: solid 2px #FF0067;
-}
-.row3{
-	border: none;
-}
 #pull-left{
 	float: left;
 }
@@ -105,15 +97,30 @@ input[type="button"]:active{
     height: 100%;
     display: grid;
 /*    background: blue;*/
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-/*    grid-gap: 2px;*/
 }
+
+.row1,.row2,.row3,.row4,.row5,.row6,.row7,.row8,.row9,.row10 {
+    display: flex;
+    
+}
+.row2,.row4,.row6,.row8,.row10{
+     flex-direction: row-reverse;   
+}
+/*
+.box{
+    background: #626ef2;
+}
+.box1 #box2,box1 #box4,box1 #box6,box1 #box8,box1 #box10{
+    
+}
+*/
 .box{
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 /****************************Style the result div which show the X & O ************************************/
 .result{

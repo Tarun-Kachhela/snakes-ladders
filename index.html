@@ -145,17 +145,23 @@
         </div>
     </div>
     <div class="RightContainer">        
-        <button id="CreateGoti" onclick="createGoti();" class="goti">create goti</button>
-<!--		This is button for restart the game-->
-		<input type="button" value="Start" class="center animated zoomIn" id="start-button">
-        <script src="js/jquery-3.1.1.min.js"></script>
-	    <script src="js/script.js"></script>    
+        <p>Select how many players</p>
+        <select name="test" id="test">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <div class="RandomNumber"></div>
+        <button id="CreateGoti"  class="createGoti">Create Goti</button>
+        <button class="ButtonForRandomNumber">number</button>
+        <input type="button" value="Start" class="center animated zoomIn" id="start-button">    
     </div>
 </div>
-
-
-	
-
+<div class="goti"></div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/script.js"></script> 
 </body>
-
 </html>

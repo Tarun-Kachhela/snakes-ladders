@@ -11,7 +11,7 @@ class SnakeAndLadder
 		List<String> rankList  = new ArrayList<>(); 
 		Random randomNumber = new Random();
 		laddersMapper.put(5,35);
-		laddersMapper.put(17,13);
+		laddersMapper.put(17,43);
 		laddersMapper.put(12,78);
 		laddersMapper.put(33,67);
 		laddersMapper.put(65,95);
@@ -48,7 +48,7 @@ class SnakeAndLadder
 				if((playerPosition.size()-1)==position)
 					position=0;
 				position++;
-			}//check weather the it contains ladder or snake 
+			}
 		System.out.println();
 		}
 	}

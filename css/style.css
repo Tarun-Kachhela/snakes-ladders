@@ -101,26 +101,24 @@ input[type="button"]:active{
 }
 
 .row1,.row2,.row3,.row4,.row5,.row6,.row7,.row8,.row9,.row10 {
-    display: flex;
-    
+    display: flex;   
 }
 .row2,.row4,.row6,.row8,.row10{
      flex-direction: row-reverse;   
 }
-/*
-.box{
-    background: #626ef2;
-}
-.box1 #box2,box1 #box4,box1 #box6,box1 #box8,box1 #box10{
-    
-}
-*/
 .box{
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
+}
+.goti{
+    height: 20px;
+    width: 20px;
+    background: blue;
+    text-align: center;
+    display: none;
 }
 /****************************Style the result div which show the X & O ************************************/
 .result{

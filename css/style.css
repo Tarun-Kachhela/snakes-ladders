@@ -52,6 +52,7 @@ html,body{
 }
 .LeftContainer{
     background: #CCC;    
+     
 }
 .RightContainer{
     background: red;
@@ -60,8 +61,8 @@ html,body{
 }
 .image{
     height: 39.7rem;
-    background:url("../images/snakes_ladders.jpg") no-repeat center;
-    background-size: contain;
+    background:url("../images/snake_ladder.jpg") no-repeat center;
+    background-size: cover;
 }
 body .middle{
     position: relative;
@@ -107,11 +108,13 @@ input[type="button"]:active{
      flex-direction: row-reverse;   
 }
 .box{
-    border: 1px solid black;
+/*    border: 1px solid black;*/
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
+    color:rgba(0,0,0,0);
+/*    visibility: hidden;*/
 }
 .goti{
     height: 20px;
@@ -119,6 +122,7 @@ input[type="button"]:active{
     background: blue;
     text-align: center;
     display: none;
+    color: white;
 }
 /****************************Style the result div which show the X & O ************************************/
 .result{

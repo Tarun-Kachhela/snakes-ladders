@@ -1,10 +1,15 @@
 $(function(){
-    i=0,random=0,whichPlayer=0,previousPosition=0;
+    i=1,random=0,whichPlayer=1,previousPosition=1;
     var playersPositions = new Map();
-    var laddersMapper=mapper([[5,35],[17,43],[12,78],[33,67],[65,95]]);
-    var snakesMapper=mapper([[32,8],[41,18],[66,36],[99,56],[87,69]]);
+    var laddersMapper=mapper([[9,51],[5,27],[66,88],[22,60],
+[71,92],
+[85,97],
+[53,69],
+[28,54],
+[44,79]]);
+    var snakesMapper=mapper([[13,7],[37,19],[80,43],[86,46],[91,41],[99,4]]);
     var rankList = mapper()
-    
+    var numOfPlayers;
     $(".ButtonForRandomNumber").click(function(){
         $("#CreateGoti").hide();
         random=randomNumberGenerator();
@@ -12,51 +17,56 @@ $(function(){
         if(laddersMapper.has(playerPosition)){
             playerPosition= laddersMapper.get(playerPosition);
             previousPosition=playersPositions.get(whichPlayer);
-            alert(previousPosition);
-            $(".boxes #goti"+previousPosition).remove();
-            $(".boxes #box"+playerPosition).html("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
+//            alert("previousPosition "+previousPosition+"whichPlayer " +whichPlayer);
+            $(".boxes #goti"+whichPlayer).remove();
+            $(".boxes #box"+playerPosition).append("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
             $(".boxes #box"+playerPosition+" #goti"+whichPlayer).css("display","block");
         }
         else if(snakesMapper.has(playerPosition)){
             playerPosition = snakesMapper.get(playerPosition);
             previousPosition=playersPositions.get(whichPlayer);
-            alert(previousPosition);
-            $(".boxes #goti"+previousPosition).remove();
-            $(".boxes #box"+playerPosition).html("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
+//            alert("previousPosition"+previousPosition+" whichPlayer" +whichPlayer);
+            $(".boxes #goti"+whichPlayer).remove();
+            $(".boxes #box"+playerPosition).append("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
             $(".boxes #box"+playerPosition+" #goti"+whichPlayer).css("display","block");
         }
         if(playerPosition == 100){
-            playersPositions.delete(whichPlayer);
+            
             previousPosition=playersPositions.get(whichPlayer);
-            alert(previousPosition);
-            $(".boxes #goti"+previousPosition).remove();
-            $(".boxes #box"+playerPosition).html("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
+            alert("previousPosition "+previousPosition+"whichPlayer " +whichPlayer);
+            $(".boxes #goti"+whichPlayer).remove();
+            $(".boxes #box"+playerPosition).append("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
             $(".boxes #box"+playerPosition+" #goti"+whichPlayer).css("display","block");
+            playersPositions.delete(whichPlayer);
+            console.log(playersPositions);
 //            alert(playersPositions.get(0) +" "+playersPositions.get(1) +" "+whichPlayer+" "+random);
         }
         else if(playerPosition<=100){
-            playersPositions.set(whichPlayer,playerPosition);
             previousPosition=playersPositions.get(whichPlayer);
-            alert(previousPosition);
-            $(".boxes #goti"+previousPosition).remove();
-            $(".boxes #box"+playerPosition).html("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
+//            alert("previousPosition "+previousPosition+"whichPlayer " +whichPlayer);
+            $(".boxes #goti"+whichPlayer).remove();
+            
+            
+            $(".boxes #box"+playerPosition).append("<div class =\"goti\" id=\"goti"+whichPlayer+"\">"+whichPlayer+"</div>");
             $(".boxes #box"+playerPosition+" #goti"+whichPlayer).css("display","block");
+            playersPositions.set(whichPlayer,playerPosition);
 //            alert(playersPositions.get(0) +" "+playersPositions.get(1) +" "+whichPlayer+" "+random);
         }
-        if((playersPositions.size-1)==whichPlayer)
-            whichPlayer=0;
+        if(numOfPlayers==whichPlayer)
+            whichPlayer=1;
         else
             whichPlayer++;
     });
     $("#CreateGoti").click(function(){
         createGoti();
+        numOfPlayers = playersPositions.size;
     });
 //    document.getElementById("CreateGoti").addEventListener("click", createGoti);
     function createGoti(){
         $(".row1 #box1").append("<div class =\"goti\" id=\"goti"+i+"\">"+i+"</div>");
         $(".row1 #box1 #goti"+i).css("display","block");
 //        playersPositions.push();
-        playersPositions.set(i,0);
+        playersPositions.set(i,1);
         i++;
     }
 });

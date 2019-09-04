@@ -14,37 +14,7 @@ html,body{
 	height: 100px;
 }
 /**********************************for styling all rows & inside all the rows all the tags are styled**********************/
-#pull-left{
-	float: left;
-}
-.col-1,.col-2{
-	height: 100%;
-	width: 124px;
-	border-right: solid 2px #FF0067;
-}
-.inside{
-	width: 95px;
-	height: 105px;
-	background: #00C4C4;
-	margin: 15px 13px 13px 13px;
-	border-radius: 10px;
-}
-.inside .text{
-	font-size: 100px;
-	padding: 0;
-	width: 75px;
-	height: 120px;
-	margin-left: 10px;
-	line-height: 110px;
-	color: #FF0067;
-	display: inline-block;
-}
-.center{
-    display: block;
-	font-size: 40px;
-	margin: 0 auto;
-    
-}
+
 .GridContainer{
     display: grid;
     height: 100%;

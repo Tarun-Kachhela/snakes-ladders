@@ -2,16 +2,11 @@ $(function(){
     i=1,random=0,whichPlayer=1,previousPosition=1;
     var playersPositions = new Map();
     var laddersMapper=mapper([[9,51],[5,27],[66,88],[22,60],
-[71,92],
-[85,97],
-[53,69],
-[28,54],
-[44,79]]);
+                              [71,92],[85,97],[53,69],[28,54],[44,79]]);
     var snakesMapper=mapper([[13,7],[37,19],[80,43],[86,46],[91,41],[99,4]]);
     var rankList = mapper()
     var numOfPlayers;
     $(".ButtonForRandomNumber").click(function(){
-        $("#CreateGoti").hide();
         random=randomNumberGenerator();
         playerPosition =playersPositions.get(whichPlayer)+random;
         if(laddersMapper.has(playerPosition)){
@@ -57,11 +52,16 @@ $(function(){
         else
             whichPlayer++;
     });
-    $("#CreateGoti").click(function(){
-        createGoti();
-        numOfPlayers = playersPositions.size;
+    $("#selectNoOfPlayer").change(function(){
+//        alert($("#selectNoOfPlayer option:selected").attr("value"));
+        var players=document.getElementById("selectNoOfPlayer").value;
+        for(k=0;k<players;k++)
+            createGoti();
+        numOfPlayers = playersPositions.size; 
+        
+        $("#selectNoOfPlayer,.para").hide();
+        
     });
-//    document.getElementById("CreateGoti").addEventListener("click", createGoti);
     function createGoti(){
         $(".row1 #box1").append("<div class =\"goti\" id=\"goti"+i+"\">"+i+"</div>");
         $(".row1 #box1 #goti"+i).css("display","block");
